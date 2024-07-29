@@ -27,9 +27,14 @@
   <script>
     const btn = document.querySelector("button");
     const input = document.querySelector("input");
+    const url_base =
+      window.location.protocol +
+      "//" +
+      window.location.hostname +
+      console.log(url_base);
     btn.onclick = async () => {
       try {
-        const res = await fetch("http://localhost:3000/send-message", {
+        const res = await fetch(`${url_base}/send-message`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
